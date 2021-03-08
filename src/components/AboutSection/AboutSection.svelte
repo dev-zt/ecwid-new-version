@@ -1,11 +1,12 @@
 <section class="about-section">
-    <h3>Madison On The Lake</h3>
-    <p>
-        18-26 N Broad St, Ridgewood, NJ 07450, USA
-    </p>    
-    <p>
-        (201) 266-584
-    </p>
+    <img src="/imgs/aboutus.jpg" alt="About Madison">
+    <div class="about">
+        <h1>About Us</h1>
+        <p>
+            Here at Madison, we pride ourselves on serving food that delivers the most exquisite pleasure to your taste buds and is healthy for your body. We are Ridgewood’s first sous vide themed restaurant concept and when it comes to serving healthy meals, Ridgewood’s  residents have counted on us time and time again.
+        </p>    
+    </div>
+    
 </section>
 
 

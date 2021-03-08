@@ -42,7 +42,7 @@
 <Carousel />
 
 <AboutSection />
-{#if categories.items && categories.items.length}
+{#if categories && categories.items && categories.items.length}
 	<CategoriesNav {categories} {category} />
 {/if}
 
