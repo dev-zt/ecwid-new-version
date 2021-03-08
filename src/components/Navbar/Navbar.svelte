@@ -25,7 +25,8 @@
         let sTime = +new Date
         let int = setInterval(() => {
             if(window.deferredPrompt){
-                canDownload = true
+                // Uncommend to activate download link
+                // canDownload = true
                 clearInterval(int)
             }
             let eTime = +new Date

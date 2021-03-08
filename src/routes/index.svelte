@@ -2,7 +2,7 @@
     import {fetchProducts, fetchCategories} from '../lib/api'
 	export async function preload(page, session) {
 		const categories = await fetchCategories()
-		let catName = categories.items?.[0]?.name
+		let catName = categories && categories.items && categories.items[0] && categories.items[0].name
         return { categories, category: catName}
 	}
 </script>
