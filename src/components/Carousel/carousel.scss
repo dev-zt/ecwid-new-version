@@ -1,0 +1,81 @@
+.carousel {
+    background-color: #efefef;
+    .container {
+        position: relative;
+        width: 100%;
+        max-width: 1160px;
+        overflow-y: hidden;
+        margin: 0 auto;
+        .item {
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            // background-size: auto 100%;
+            width: 100%;
+            display: none;
+            &.selected{
+                display: block;
+            }
+        }
+        .prev, .next {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            > div {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+                background: #33333399;
+                color: #fff;
+                cursor: pointer;
+                i{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .prev{
+            left: 0;
+            margin-left: 0.5rem;
+        }
+        .next{
+            right: 0;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+
+@media(max-width: 700px){
+    .carousel {
+        .container {
+            .item {
+                height: 350px;
+            }
+        }
+    }
+}
+
+@media(max-width: 480px){
+    .carousel {
+        .container {
+            .prev, .next {
+                display: none;
+            }
+            .item {
+                height: 150px;
+                width: 100%;
+                background-position: 0 0;
+                background-attachment: scroll;
+            }
+        }
+    }
+}

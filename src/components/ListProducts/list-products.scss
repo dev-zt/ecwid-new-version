@@ -1,0 +1,35 @@
+.list-products {
+    .container {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 0 1rem 0;
+        margin-bottom: 2rem;
+        h2{
+            margin-top: 2rem;
+        }
+        .products {
+            display: grid;
+            column-gap: 0.5rem;
+            row-gap: 10px;
+            grid-template-columns:  minmax(auto,50%) minmax(auto,50%);
+            .info {
+                color: #aaa;
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-top: 2rem;
+            }
+        }
+    }
+
+}
+
+@media(max-width: 770px){
+    .list-products{
+        .container {
+            padding: 0 1rem 2rem 1rem;
+            .products{
+                grid-template-columns: auto;
+            }
+        }
+    }
+}
