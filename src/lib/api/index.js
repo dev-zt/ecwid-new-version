@@ -1,6 +1,6 @@
-const STORE_ID = '45331382'
+const STORE_ID = '50970301';
 const API_URL = 'https://app.ecwid.com/api/v3/'+STORE_ID
-const TOKEN = 'public_UPXgpG6jhmnbmuECv4cMpqFyP8JigvUw'
+const TOKEN = 'public_AeuHQHNAxBYaeSD9QZZwFXeF4x4mSzNs'
 
 if (typeof fetch !== 'function') {
     global.fetch = require('node-fetch')

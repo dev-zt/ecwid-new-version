@@ -33637,3 +33637,10 @@ html#ecwid_html body#ecwid_body button.ecwid-popup-closeButton {
 html#ecwid_html body#ecwid_body button.ecwid-popup-closeButton:hover {
   background-color: transparent;
 }
+
+html#ecwid_html body#ecwid_body div.ecwid-ProductBrowserPopup .popupContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 660px;
+}

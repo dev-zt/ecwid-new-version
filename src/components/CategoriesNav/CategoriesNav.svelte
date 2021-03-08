@@ -15,7 +15,7 @@ import { onMount } from 'svelte';
 
     $: if (y && node){
         let pos = node.getBoundingClientRect()
-        wide = pos.y == 79
+        wide = pos.y <= 80
         $navShadow = !wide
     }
 

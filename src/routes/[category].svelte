@@ -7,7 +7,7 @@
 </script>
 
 <script>
-	import {WelcomeBar, Carousel, CategoriesNav , ListProducts} from '../components'
+	import {WelcomeBar, Carousel, CategoriesNav , ListProducts, AboutSection} from '../components'
 	import EcwidUtil from '../lib/ecwid-util'
 	export let categories
 	let category
@@ -39,9 +39,9 @@
 </svelte:head>
 
 <WelcomeBar />
-
 <Carousel />
 
+<AboutSection />
 {#if categories.items && categories.items.length}
 	<CategoriesNav {categories} {category} />
 {/if}
