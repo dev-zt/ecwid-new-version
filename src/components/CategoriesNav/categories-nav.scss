@@ -6,9 +6,11 @@
     margin-bottom: 20px;
     &.wide {
         box-shadow: var(--shadow-md);
+        background: #fff;
     }
-    background: #fff;
+    background: #efefef;
     .container {
+        background: #fff;
         border-radius: 2px;
         max-width: 1160px;
         margin: 0 auto;

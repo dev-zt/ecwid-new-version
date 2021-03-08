@@ -38,19 +38,29 @@
 	<title>{category}</title>
 </svelte:head>
 
-<WelcomeBar />
-<Carousel />
 
-<AboutSection />
-{#if categories && categories.items && categories.items.length}
-	<CategoriesNav {categories} {category} />
-{/if}
+<div class="index">
+	<WelcomeBar />
+	<Carousel />
+
+	<AboutSection />
+	{#if categories && categories.items && categories.items.length}
+		<CategoriesNav {categories} {category} />
+	{/if}
 
 
-{#if list.error}
-	<div class="error">
-		Error occured while fetching products, Please try again later!
-	</div>
-{:else}
-	<ListProducts {list} />
-{/if}
+	{#if list.error}
+		<div class="error">
+			Error occured while fetching products, Please try again later!
+		</div>
+	{:else}
+		<ListProducts {list} />
+	{/if}
+
+</div>
+
+<style>
+	.index{
+		background: #efefef;
+	}
+</style>

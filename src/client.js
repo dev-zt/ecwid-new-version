@@ -15,7 +15,7 @@ function mCallback(mutations) {
     if (mutation.type === 'childList') {
 		let node = mutation.addedNodes && mutation.addedNodes[0]
 		if(node && node.tagName == 'LINK'){
-			node.setAttribute('href','/ecwid.css')
+			// node.setAttribute('href','/ecwid.css')
 		}
     }
   }

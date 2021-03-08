@@ -70,29 +70,37 @@
 
 <svelte:window bind:scrollY={y} ></svelte:window>
 
-<WelcomeBar />
-
-<Carousel />
-
-<AboutSection />
-
-{#if categories && categories.items && categories.items.length}
-	<CategoriesNav {categories} {category} />
-{/if}
-
-
-{#if list.error}
-	<div class="error">
-		Error occured while fetching products, Please try again later!
-	</div>
-{:else}
-	{#each list as item}
-		<div bind:this={item.node}>
-			{#await item.items}
-				<div></div>
-			{:then pItems} 
-				<ListProducts list={pItems} hideNotFound category={item.category} />
-			{/await}
+<div class="index">
+	<WelcomeBar />
+	
+	<Carousel />
+	
+	<AboutSection />
+	
+	{#if categories && categories.items && categories.items.length}
+		<CategoriesNav {categories} {category} />
+	{/if}
+	
+	
+	{#if list.error}
+		<div class="error">
+			Error occured while fetching products, Please try again later!
 		</div>
-	{/each}
-{/if}
+	{:else}
+		{#each list as item}
+			<div bind:this={item.node}>
+				{#await item.items}
+					<div></div>
+				{:then pItems} 
+					<ListProducts list={pItems} hideNotFound category={item.category} />
+				{/await}
+			</div>
+		{/each}
+	{/if}
+</div>
+
+<style>
+	.index{
+		background: #efefef;
+	}
+</style>
