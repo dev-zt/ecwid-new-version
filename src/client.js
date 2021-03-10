@@ -10,6 +10,29 @@ options = {
 },
 observer = new MutationObserver(mCallback);
 
+let body = document.querySelector('body'),
+observerPopup = new MutationObserver(mCallbackPopup);
+
+
+function mCallbackPopup(mutations) {
+  for (let mutation of mutations) {
+    if (mutation.type === 'childList') {
+		let node = mutation.addedNodes && mutation.addedNodes[0]
+		if(node && node.tagName == 'DIV' && node.classList.contains('ecwid-popup')){
+			  node.style.position = "fixed"
+        let top = "50px"
+        let maxHeight = "90vh"
+        if(window.innerWidth<480){
+            top= "0"
+            maxHeight= "100vh"
+        }
+			  node.style.top = top
+			  node.style.maxHeight = maxHeight
+		}
+    }
+  }
+}
+
 function mCallback(mutations) {
   for (let mutation of mutations) {
     if (mutation.type === 'childList') {
@@ -22,6 +45,7 @@ function mCallback(mutations) {
 }
 
 observer.observe(head, options);
+observerPopup.observe(body, options);
 
 window.ecwidMessages = {
 	"BuyNow.buy_now":"Add",
