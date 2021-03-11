@@ -33,10 +33,11 @@ async function mCallbackPopup(mutations) {
         await new Promise(r => setTimeout(r,300))
         
         let cartHasNoImg = node.querySelector('.product-details--no-images')
+        let cartHasNoDesc = node.querySelector('.product-details__description--blank')
         let embedContent = node.querySelector('.ecwid-ProductBrowserPopup-content')
         if(embedContent){
           let nw = embedContent.firstElementChild.firstElementChild
-          if(cartHasNoImg){
+          if(cartHasNoImg && cartHasNoDesc){
             embedContent.style.width = "100%"
             nw.style.width = '300px'
           }else{
