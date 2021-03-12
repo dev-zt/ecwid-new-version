@@ -84,6 +84,13 @@
                     display: block;
                     cursor: pointer;
                 }
+
+                > hr {
+                    height: 2px;
+                    background: #212121;
+                    border: none;
+                    margin: 0 2rem;
+                }
             }
             a {
                 font-size: 16px;

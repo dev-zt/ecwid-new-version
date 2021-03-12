@@ -55,8 +55,11 @@
                     <a class="start" on:click|stopPropagation href="/#cat-nav" class:selected={segment==""}> Menu </a>
                     <a href="/contact" on:click|stopPropagation class:selected={segment=="contact"}> Contact </a>
                     {#if canDownload}
-                        <div class="link" on:click={installPWA}>Download App</div>
+                    <div class="link" on:click={installPWA}>Download App</div>
                     {/if}
+                    <hr>
+                    <a href="#!/~/accountSettings">Sign in</a>
+
                 </div>
             </div>
         </div>
