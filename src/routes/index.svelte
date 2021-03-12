@@ -102,5 +102,6 @@
 <style>
 	.index{
 		background: #efefef;
+		padding-bottom: 2rem;
 	}
 </style>
