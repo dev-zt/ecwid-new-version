@@ -3,19 +3,30 @@
     padding: 0 1rem;
     height: 80px;
     position: fixed;
+    display: flex;
+    width: 100%;
+    align-items: center;
     top: 0;
     left: 0;
     width: 100vw;
     z-index: 99;
     padding: 0;
     > nav  {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         max-width: 1160px;
         margin: 0 auto;
-        &.open{
-            flex-direction: row;
+        .nav-s1{
+            width: 53%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+            &.open{
+                flex-direction: row;
+            }
         }
         flex-direction: row-reverse;
         padding: 0 1rem;
@@ -46,14 +57,6 @@
             margin-right: 1rem;
             &.hide{
                 display: none;
-            }
-        }
-        .m2{
-            display: block;
-            &.hide{
-                position: absolute;
-                right: 20px;
-                top: 20px;
             }
         }
         .menu {
@@ -106,12 +109,9 @@
 
 @media(max-width: 480px){
     .navbar{
-        >nav {
-            .menu{
-                width: 100%;
-            }
-            .m2.hide{
-                display: none;
+        > nav {
+            .nav-s1{
+                width: 60%;
             }
         }
     }
