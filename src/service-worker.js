@@ -47,7 +47,12 @@ async function fetchAndCache(request) {
 		const response = await cache.match(request);
 		if (response) return response;
 
+		const offlinecache = await caches.open(ASSETS)
+		const res = await offlinecache.match('offline.html')
+		if(res)
+		return res
 		throw err;
+
 	}
 }
 
