@@ -1,9 +1,9 @@
+import env from './env'
 export default {
     remove(){
 
         if (typeof Ecwid != 'undefined'){
             Ecwid.destroy()
-            // Ecwid.init()
         }
 
     },
@@ -11,7 +11,7 @@ export default {
         
         let sc = document.createElement('script')
 		sc.setAttribute('type','text/javascript')
-		sc.setAttribute('src', `https://app.ecwid.com/script.js?50970301&data_platform=singleproduct_v2`)
+		sc.setAttribute('src', `https://app.ecwid.com/script.js?${env.STORE_ID}&data_platform=singleproduct_v2`)
 		sc.setAttribute('charset','utf-8')
 		sc.setAttribute('id','cart-ecwid-pr')
 		sc.dataset.csasync = false

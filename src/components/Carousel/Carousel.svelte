@@ -1,10 +1,6 @@
 <script>
     let selected = 1
     const images = [
-        // {src: '1.jpg'},
-        // {src: '2.jpg'},
-        // {src: '3.jpg'},
-        // {src: '4.jpg'},
         {src: '6.jpg'}
     ]
     function prev(){
@@ -28,7 +24,9 @@
     <div class="container">
         {#if images.length>1}
         <div class="prev">
-            <div on:click={prev}><i class="fas fa-chevron-left" /></div>
+            <div on:click={prev}>
+                <img alt="left" src="/icons/chevron-left.svg" />
+            </div>
         </div>
         {/if}
         {#each images as img,i}
@@ -37,7 +35,9 @@
         {/each}
         {#if images.length>1}
         <div class="next">
-            <div on:click={next}><i class="fas fa-chevron-right" /></div>
+            <div on:click={next}>
+                <img alt="right" src="/icons/chevron-right.svg" />
+            </div>
         </div>
         {/if}
     </div>

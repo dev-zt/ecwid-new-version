@@ -4,13 +4,11 @@ sapper.start({
 	target: document.querySelector('#sapper')
 });
 
-let head = document.querySelector('head'),
-options = {
+
+let options = {
   childList: true
 },
-observer = new MutationObserver(mCallback);
-
-let body = document.querySelector('body'),
+body = document.querySelector('body'),
 observerPopup = new MutationObserver(mCallbackPopup);
 
 
@@ -52,25 +50,9 @@ async function mCallbackPopup(mutations) {
   }
 }
 
-function mCallback(mutations) {
-  for (let mutation of mutations) {
-    if (mutation.type === 'childList') {
-		let node = mutation.addedNodes && mutation.addedNodes[0]
-		if(node && node.tagName == 'LINK'){
-			// node.setAttribute('href','/ecwid.css')
-		}
-    }
-  }
-}
 
-observer.observe(head, options);
 observerPopup.observe(body, options);
 
 window.ecwidMessages = {
 	"BuyNow.buy_now":"Add",
 }
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  window.deferredPrompt = e;
-});

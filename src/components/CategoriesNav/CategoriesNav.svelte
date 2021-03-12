@@ -65,7 +65,7 @@ import { onMount } from 'svelte';
         <div class="right" on:mouseup|stopPropagation={toggleMenu}>
             {#if slicedItems.length}
                 <div class="more" >
-                    More <i class="fas fa-sort-down" />
+                    More <img alt="expand" src="/icons/expand.svg">
                 </div>
             {/if}
             <div class="options" class:open>

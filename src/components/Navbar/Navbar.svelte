@@ -22,19 +22,6 @@
     }
 
     onMount(() => {
-        let sTime = +new Date
-        let int = setInterval(() => {
-            if(window.deferredPrompt){
-                // Uncommend to activate download link
-                // canDownload = true
-                clearInterval(int)
-            }
-            let eTime = +new Date
-            if(eTime-sTime > 10000){
-                clearInterval(int)
-            }
-        },200)
-
         setUpBag()
     })
 
@@ -46,9 +33,9 @@
         </div>
         <div class="nav-s1" class:open={!close}>
             <a href="/" class="logo" on:click|stopPropagation class:open={!close}>
-                <img src="/logo-192.png" alt="madison logo" >
+                <img src="/logo/76.png" alt="madison logo" >
             </a>   
-            <i class="fas fa-bars bars icon" class:hide={!close} on:click={openMenu} />
+            <img alt="menu" src="/icons/menu.svg" class="icon bars" class:hide={!close} on:click={openMenu} />
             <div id="menu" class="menu" class:close>
                 <img alt="close" class="icon" src="/icons/close.svg" on:click={closeMenu} />
                 <div class="container">

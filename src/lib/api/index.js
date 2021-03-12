@@ -1,6 +1,5 @@
-const STORE_ID = '50970301';
-const API_URL = 'https://app.ecwid.com/api/v3/'+STORE_ID
-const TOKEN = 'public_AeuHQHNAxBYaeSD9QZZwFXeF4x4mSzNs'
+import env from '../env'
+const API_URL = 'https://app.ecwid.com/api/v3/'+env.STORE_ID
 
 if (typeof fetch !== 'function') {
     global.fetch = require('node-fetch')
@@ -8,7 +7,7 @@ if (typeof fetch !== 'function') {
 
 async function req(url){
     try {
-        return await fetch(API_URL+url+'token='+TOKEN).then(res => res.json())
+        return await fetch(API_URL+url+'token='+env.TOKEN).then(res => res.json())
     }catch (e){
         return {error: true}
     }
