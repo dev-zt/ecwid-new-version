@@ -32,6 +32,7 @@
             <div data-layout="SMALL_ICON" class="ec-cart-widget"></div>
         </div>
         <div class="nav-s1" class:open={!close}>
+            <div></div>
             <a href="/" class="logo" on:click|stopPropagation class:open={!close}>
                 <img src="/logo/76.png" alt="madison logo" >
             </a>   
