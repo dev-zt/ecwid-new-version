@@ -27,7 +27,7 @@
 <div class="card" on:click={triggerPopup}>
     {#if product.thumbnailUrl}
         <div class="img-wrapper">
-            <img alt={product.name} src={product.thumbnailUrl} />
+            <img loading=lazy alt={product.name} src={product.thumbnailUrl} />
         </div>
     {/if}
     <div class="body">
