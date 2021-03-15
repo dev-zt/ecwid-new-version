@@ -37,7 +37,8 @@ async function mCallbackPopup(mutations) {
           let nw = embedContent.firstElementChild.firstElementChild
           if(cartHasNoImg && cartHasNoDesc){
             embedContent.style.width = "100%"
-            nw.style.width = '300px'
+            if(window.innerWidth>768)
+              nw.style.width = '300px'
           }else{
             embedContent.style.width = "80vw"
             nw.style.width = 'inherit'
