@@ -28,7 +28,7 @@ async function mCallbackPopup(mutations) {
 			  node.style.maxHeight = maxHeight
 
         if(window.innerWidth < 600) return
-        await new Promise(r => setTimeout(r,500))
+        await new Promise(r => setTimeout(r,300))
 
         let cartHasNoImg = node.querySelector('.product-details--no-images')
         let cartHasNoDesc = node.querySelector('.product-details__description--blank')
@@ -41,16 +41,11 @@ async function mCallbackPopup(mutations) {
           }else{
             embedContent.style.width = "80vw"
             nw.style.width = 'inherit'
+            if(window.innerWidth>768)
             nw.setAttribute('class','ec-size ec-size--xxs ec-size--xs ec-size--s ec-size--m ecwid-no-touch ecwid-supports-cssanimations ecwid-responsive ecwid-no-dragndrop')
-          }
-          
-          if(window.innerWidth < 769){
-            nw.setAttribute('class','ec-size ec-size--xxs ec-size--xs ecwid-no-touch ecwid-supports-cssanimations ecwid-responsive ecwid-no-dragndrop ecwid-lte-768px ecwid-lte-600px ecwid-lte-480px')
           }
 
         }
-
-
 
 		  }
     }
