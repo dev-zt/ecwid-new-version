@@ -23,6 +23,7 @@ async function mCallbackPopup(mutations) {
         if(window.innerWidth<769){
             top= "0"
             maxHeight= window.innerHeight+'px'
+            node.style.height = maxHeight
         }
 			  node.style.top = top
 			  node.style.maxHeight = maxHeight
