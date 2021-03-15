@@ -35,7 +35,7 @@
             <a href="/" class="logo" on:click|stopPropagation class:open={!close}>
                 <img src="/logo/76.png" alt="madison logo" >
             </a>   
-            <img alt="menu" src="/icons/menu.svg" class="icon bars" class:hide={!close} on:click={openMenu} />
+            <i class="fas fa-bars bars icon" class:hide={!close} on:click={openMenu} />
             <div id="menu" class="menu" class:close>
                 <img alt="close" class="icon" src="/icons/close.svg" on:click={closeMenu} />
                 <div class="container">

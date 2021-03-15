@@ -24,9 +24,7 @@
     <div class="container">
         {#if images.length>1}
         <div class="prev">
-            <div on:click={prev}>
-                <img alt="left" src="/icons/chevron-left.svg" />
-            </div>
+            <div on:click={prev}><i class="fas fa-chevron-left" /></div>
         </div>
         {/if}
         {#each images as img,i}
@@ -35,9 +33,7 @@
         {/each}
         {#if images.length>1}
         <div class="next">
-            <div on:click={next}>
-                <img alt="right" src="/icons/chevron-right.svg" />
-            </div>
+            <div on:click={next}><i class="fas fa-chevron-right" /></div>
         </div>
         {/if}
     </div>

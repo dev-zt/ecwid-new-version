@@ -18,7 +18,5 @@ export async function fetchCategories(){
 }
 
 export async function fetchProducts(cat){
-    return await req(`/products?${cat ? 'category='+cat+'&' : ''}`)
+    return await req(`/products?${cat ? 'category='+cat+'&enabled=true&' : ''}`)
 }
-
-

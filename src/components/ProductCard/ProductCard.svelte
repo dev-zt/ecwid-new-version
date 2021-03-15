@@ -37,6 +37,9 @@
         </div>
         <div class="control">
             <div class="price">{product.defaultDisplayedPriceFormatted}</div>
+            {#if product.inStock == false}
+                <div class="out">Out of Stock</div>
+            {/if}
             <BuyButton id={product.id} on:setup={setUpBtnClick} />
         </div>
     </div>
