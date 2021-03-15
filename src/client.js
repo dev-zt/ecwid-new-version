@@ -20,7 +20,7 @@ async function mCallbackPopup(mutations) {
 			  node.style.position = "fixed"
         let top = "50px"
         let maxHeight = "90vh"
-        if(window.innerWidth<480){
+        if(window.innerWidth<769){
             top= "0"
             maxHeight= "100vh"
         }
