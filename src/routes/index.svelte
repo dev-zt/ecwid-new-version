@@ -2,13 +2,13 @@
     import {fetchProducts, fetchCategories} from '../lib/api'
 	export async function preload(page, session) {
 		const categories = await fetchCategories()
-		let catName = categories && categories.items && categories.items[0] && categories.items[0].name
-        return { categories, category: catName}
+		let cat = categories && categories.items && categories.items[0] 
+        return { categories, category: cat.name}
 	}
 </script>
 
 <script>
-	import {WelcomeBar, Carousel, CategoriesNav , ListProducts, AboutSection} from '../components'
+	import {WelcomeBar, Carousel, CategoriesNav , ListProducts} from '../components'
 	import EcwidUtil from '../lib/ecwid-util'
 	import {onMount} from 'svelte'
 
@@ -74,8 +74,6 @@
 	<WelcomeBar />
 	
 	<Carousel />
-	
-	<AboutSection />
 	
 	{#if categories && categories.items && categories.items.length}
 		<CategoriesNav {categories} {category} />

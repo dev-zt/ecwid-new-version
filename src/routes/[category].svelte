@@ -7,18 +7,20 @@
 </script>
 
 <script>
-	import {WelcomeBar, Carousel, CategoriesNav , ListProducts, AboutSection} from '../components'
+	import {WelcomeBar, Carousel, CategoriesNav , ListProducts} from '../components'
 	import EcwidUtil from '../lib/ecwid-util'
 	export let categories
 	let category
+	let category_name=''
 	let list = []
 	import { stores } from "@sapper/app";
 	const {page} = stores()
 
 	async function getProducts(cat){
-		let catObj = categories.items.find(c => c.name == cat)
+		let catObj = categories.items.find(c => c.slug == cat)
 		list = []
 		if(catObj){
+			category_name = catObj.name
 			list = await fetchProducts(catObj.id)
 		}
 	}
@@ -35,7 +37,7 @@
 </script>
 
 <svelte:head>
-	<title>{category}</title>
+	<title>{category_name}</title>
 </svelte:head>
 
 
@@ -43,9 +45,8 @@
 	<WelcomeBar />
 	<Carousel />
 
-	<AboutSection />
 	{#if categories && categories.items && categories.items.length}
-		<CategoriesNav {categories} {category} />
+		<CategoriesNav {categories} category={category_name} />
 	{/if}
 
 

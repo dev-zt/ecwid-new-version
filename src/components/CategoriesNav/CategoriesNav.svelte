@@ -52,12 +52,12 @@ import { onMount } from 'svelte';
     <div class="container" class:normal={!wide}>
         <div class="list">
             {#each [...new Array(nSlice)] as item,i}
-                <a on:click|stopPropagation href="/{list[i].name}#cat-nav" class="item" class:selected={selected==i} >
+                <a on:click|stopPropagation href="/{list[i].slug}#cat-nav" class="item" class:selected={selected==i} >
                     {list[i].name}
                 </a>
             {/each}
             {#if selected>=nSlice || nSlice == 0}
-                <a on:click|stopPropagation href="/{list[selected].name}#cat-nav" class="item" class:selected={true} >
+                <a on:click|stopPropagation href="/{list[selected].slug}#cat-nav" class="item" class:selected={true} >
                     {list[selected].name}
                 </a>
             {/if}
@@ -70,7 +70,7 @@ import { onMount } from 'svelte';
             {/if}
             <div class="options" class:open>
                 {#each slicedItems as cat}
-                    <a on:click|stopPropagation href="/{cat.name}#cat-nav" class="item">
+                    <a on:click|stopPropagation href="/{cat.slug}#cat-nav" class="item">
                         {cat.name}
                     </a>
                 {/each}

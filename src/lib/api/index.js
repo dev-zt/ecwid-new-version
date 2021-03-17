@@ -13,8 +13,27 @@ async function req(url){
     }
 }
 
+function slugify(text) {
+    return text
+      .toString()                     // Cast to string
+      .toLowerCase()                  // Convert the string to lowercase letters
+      .normalize('NFD')       // The normalize() method returns the Unicode Normalization Form of a given string.
+      .trim()                         // Remove whitespace from both sides of a string
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-');        // Replace multiple - with single -
+}
+
 export async function fetchCategories(){
-    return await req(`/categories?`)
+    let categories =  await req(`/categories?`)
+
+    categories.items = categories.items.map(c => {
+        if(!c) return
+       const slug = slugify(c.name)
+       return {...c, slug}
+    })
+
+    return categories
 }
 
 export async function fetchProducts(cat){
