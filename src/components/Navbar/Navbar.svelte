@@ -34,7 +34,7 @@
         <div class="nav-s1" class:open={!close}>
             <div></div>
             <a href="/" class="logo" on:click|stopPropagation class:open={!close}>
-                <img src="/logo/76.png" alt="madison logo" >
+                <div class="logo-img"></div>
             </a>   
             <i class="fas fa-bars bars icon" class:hide={!close} on:click={openMenu} />
             <div id="menu" class="menu" class:close>
