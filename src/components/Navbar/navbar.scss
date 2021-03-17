@@ -28,7 +28,7 @@
             }
         }
         flex-direction: row-reverse;
-        padding: 0 0 0 1rem;
+        padding: 0 0.5rem 0 1rem;
         .icon{
             display: inline-block;
             cursor: pointer;
@@ -53,6 +53,7 @@
                 height: 76px;
                 background-image: url('/logo/76.png');
                 background-size: cover;
+                margin-right: 0.5rem;
             }
         }
         .bars{
