@@ -41,9 +41,9 @@
 	onMount(() => EcwidUtil.reload())
 
 	let y
-	let lastY
+	let lastY = 0
 
-	$: if(y !== undefined && lastY != y){
+	$: if(y !== undefined && lastY+100 < y){
 		let wHeight= document.body.getBoundingClientRect().height
 
 		if(wHeight <= y+ window.innerHeight){
