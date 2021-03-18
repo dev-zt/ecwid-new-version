@@ -41,13 +41,15 @@
 	onMount(() => EcwidUtil.reload())
 
 	let y
+	let lastY
 
-	$: if(y !== undefined){
+	$: if(y !== undefined && lastY != y){
 		let wHeight= document.body.getBoundingClientRect().height
 
 		if(wHeight <= y+ window.innerHeight){
 			if(~nextCatIndex){
 				getProducts(nextCatIndex)
+				lastY = y
 			}
 		}
 
