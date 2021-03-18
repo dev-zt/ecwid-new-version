@@ -1,6 +1,7 @@
 <script>
-import { onMount } from 'svelte';
-
+    import Fa from 'svelte-fa'
+    import { faSortDown } from '@fortawesome/free-solid-svg-icons'
+    import { onMount } from 'svelte';
     import {navShadow} from '../../stores'
     export let categories 
     export let category
@@ -65,7 +66,7 @@ import { onMount } from 'svelte';
         <div class="right" on:mouseup|stopPropagation={toggleMenu}>
             {#if slicedItems.length}
                 <div class="more" >
-                    More <i class="fas fa-sort-down" />
+                    More <i><Fa icon={faSortDown} /></i>
                 </div>
             {/if}
             <div class="options" class:open>

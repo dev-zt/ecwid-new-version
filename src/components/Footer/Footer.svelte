@@ -1,10 +1,19 @@
+<script>
+    import Fa from 'svelte-fa'
+    import { faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons'
+</script>
+
 <footer class="footer">
     <div class="body">
         <div class="follow">
             <h3>Follow us</h3>
             <div class="icons">
-                <a href="https://www.facebook.com/Madison-Grill-102712391900155" target="blank"><i class="fab fa-facebook-square"/></a>
-                <a href="https://www.instagram.com/madisongrill.me/" target="blank"><i class="fab fa-instagram-square"/></a>
+                <a href="https://www.facebook.com/Madison-Grill-102712391900155" target="blank">
+                    <Fa icon={faFacebookSquare} />
+                </a>
+                <a href="https://www.instagram.com/madisongrill.me/" target="blank">
+                    <Fa icon={faInstagramSquare} />
+                </a>
             </div>    
         </div>    
         <div class="menu">

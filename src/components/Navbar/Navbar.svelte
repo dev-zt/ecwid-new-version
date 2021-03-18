@@ -1,4 +1,6 @@
 <script>
+    import Fa from 'svelte-fa'
+    import { faBars } from '@fortawesome/free-solid-svg-icons'
     import {onMount} from 'svelte'
     import { navShadow } from '../../stores';
     import EcwidUtil from '../../lib/ecwid-util'
@@ -36,7 +38,10 @@
             <a href="/" class="logo" on:click|stopPropagation class:open={!close}>
                 <div class="logo-img"></div>
             </a>   
-            <i class="fas fa-bars bars icon" class:hide={!close} on:click={openMenu} />
+            <div class="icon bars" class:hide={!close} on:click={openMenu}>
+                <Fa icon={faBars} />
+            </div>
+            
             <div id="menu" class="menu" class:close>
                 <img alt="close" class="icon" src="/icons/close.svg" on:click={closeMenu} />
                 <div class="container">

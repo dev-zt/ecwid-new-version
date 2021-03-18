@@ -43,13 +43,15 @@
 	let y
 	let lastY = 0
 
-	$: if(y !== undefined && lastY+100 < y){
+	$: if(y !== undefined){
 		let wHeight= document.body.getBoundingClientRect().height
+		if(lastY+1 < y){
 
-		if(wHeight <= y+ window.innerHeight){
-			if(~nextCatIndex){
-				getProducts(nextCatIndex)
-				lastY = y
+			if(wHeight-200 <= y+ window.innerHeight){
+				if(~nextCatIndex){
+					getProducts(nextCatIndex)
+					lastY = y
+				}
 			}
 		}
 

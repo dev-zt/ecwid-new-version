@@ -1,4 +1,6 @@
 <script>
+    import Fa from 'svelte-fa'
+    import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
     let selected = 1
     const images = [
         {src: '6.jpg'}
@@ -24,7 +26,9 @@
     <div class="container">
         {#if images.length>1}
         <div class="prev">
-            <div on:click={prev}><i class="fas fa-chevron-left" /></div>
+            <div on:click={prev}>
+                <i><Fa icon={faChevronLeft} /></i>
+            </div>
         </div>
         {/if}
         {#each images as img,i}
@@ -33,7 +37,9 @@
         {/each}
         {#if images.length>1}
         <div class="next">
-            <div on:click={next}><i class="fas fa-chevron-right" /></div>
+            <div on:click={next}>
+                <i><Fa icon={faChevronRight} /></i>
+            </div>
         </div>
         {/if}
     </div>

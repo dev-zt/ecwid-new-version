@@ -21,6 +21,8 @@
     "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.10",
     "@babel/runtime": "^7.12.5",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
@@ -42,6 +44,7 @@
     "sapper": "^0.28.10",
     "sass": "^1.32.8",
     "svelte": "^3.31.0",
+    "svelte-fa": "^2.2.0",
     "svelte-preprocess": "^4.6.1"
   }
 }
