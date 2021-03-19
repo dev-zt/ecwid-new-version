@@ -46,7 +46,7 @@
             <div id="menu" class="menu" class:close>
                 <img alt="close" class="icon" src="/icons/close.svg" on:click={closeMenu} />
                 <div class="container">
-                    <a class="start" on:click|stopPropagation href="/#cat-nav" class:selected={segment==""}> Menu </a>
+                    <a class="start" on:click|stopPropagation href="/" class:selected={segment==""}> Menu </a>
                     <a href="/contact" on:click|stopPropagation class:selected={segment=="contact"}> Contact </a>
                     {#if canDownload}
                     <div class="link" on:click={installPWA}>Download App</div>
