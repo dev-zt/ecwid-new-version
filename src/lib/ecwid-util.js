@@ -34,7 +34,7 @@ export default {
                     menuItem.removeChild(oChild)
                     setTimeout(() => {
                         icon.style.opacity = 1;
-                    })
+                    },50)
                     clearInterval(int)
                 }
             },1)

@@ -39,6 +39,14 @@
 
 	function scrollToNav(){
 		setTimeout(() => {
+			if(window.innerWidth <= 480){
+				scrollTo(0,280)
+				return
+			}
+			if(window.innerWidth <= 700){
+				scrollTo(0,480)
+				return
+			}
 			scrollTo(0,630)
 		})
 	}
