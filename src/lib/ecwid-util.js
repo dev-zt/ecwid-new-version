@@ -27,11 +27,24 @@ export default {
         scE.setAttribute('id','bag-ecwid-pr')
         scE.innerHTML = 'Ecwid.init();'
 
+        const triggerNewBag = (menuItem, oChild) => {
+            let int = setInterval(() => {
+                let icon = menuItem.querySelector('.ec-minicart__icon')
+                if(icon){
+                    menuItem.removeChild(oChild)
+                    icon.style.opacity = 1;
+                    clearInterval(int)
+                }
+            },1)
+        }
+
         let tout = setInterval(() => {
             if (window.hasOwnProperty("Ecwid")){  
                 const menuItem = document.getElementById("mobile-menu")
+                const oChild = document.getElementById('bag-placeholder')
                 if(menuItem){
                     menuItem.appendChild(scE)
+                    triggerNewBag(menuItem,oChild)
                     clearInterval(tout)
                 }
             }

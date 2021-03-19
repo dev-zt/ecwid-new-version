@@ -8,6 +8,7 @@
 
 <script>
 	import {WelcomeBar, Carousel, CategoriesNav , ListProducts, Loader} from '../components'
+	import { navShadow } from '../stores';
 	import EcwidUtil from '../lib/ecwid-util'
 	export let categories
 	let category
@@ -57,7 +58,7 @@
 			Error occured while fetching products, Please try again later!
 		</div>
 	{:else}
-		<div class="relative">
+		<div class="relative" class:top={!$navShadow}>
 			<Loader show={loading} text="Loading products..." />
 			<ListProducts {list} />
 		</div>
@@ -72,6 +73,9 @@
 	.relative{
 		position: relative;
 		min-height: 75vh;
+		padding-top: 0;
+	}
+	.relative.top{
 		padding-top: 85px;
 	}
 </style>

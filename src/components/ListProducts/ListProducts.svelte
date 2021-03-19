@@ -1,13 +1,12 @@
 <script>
     import ProductCard from '../ProductCard/ProductCard.svelte'
-    import { navShadow } from '../../stores';
     export let list
     export let hideNotFound = false
     export let category=''
 </script>
 
 
-<section class="list-products" class:top={!$navShadow}>
+<section class="list-products" >
     {#if !hideNotFound || list.items.length}
     <div class="container">
             {#if hideNotFound}
