@@ -18,10 +18,15 @@
 
 	async function getProducts(catIndex){
 		let catObj = categories.items[catIndex]
+		let catObj2 = categories.items[catIndex+1]
 		if(catObj){
-			nextCatIndex = catIndex+1
+			nextCatIndex = catIndex+2
 			let fetchPr = fetchProducts(catObj.id)
 			list.push({items: fetchPr, category: catObj.name})
+			if(catObj2){
+				let fetchPr2 = fetchProducts(catObj2.id)
+				list.push({items: fetchPr2, category: catObj2.name})
+			}
 			list = list
 			if(typeof document !== "undefined"){
 				EcwidUtil.reload()
@@ -47,9 +52,12 @@
 		let wHeight= document.body.getBoundingClientRect().height
 		if(lastY < y){
 
-			if(wHeight-700 <= y+ window.innerHeight){
+			if(wHeight-1000 <= y+ window.innerHeight){
 				if(~nextCatIndex){
 					getProducts(nextCatIndex)
+					// setTimeout(()=>{
+					// 	getProducts(nextCatIndex+1)
+					// },100)
 					lastY = y
 				}
 			}

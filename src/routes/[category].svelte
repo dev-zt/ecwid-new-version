@@ -71,5 +71,7 @@
 	}
 	.relative{
 		position: relative;
+		min-height: 75vh;
+		padding-top: 85px;
 	}
 </style>
