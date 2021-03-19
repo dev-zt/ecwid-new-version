@@ -8,17 +8,17 @@
         <div class="follow">
             <h3>Follow us</h3>
             <div class="icons">
-                <a href="https://www.facebook.com/Madison-Grill-102712391900155" target="blank">
+                <a href="https://www.facebook.com/Madison-Grill-102712391900155" target="_blank">
                     <Fa icon={faFacebookSquare} />
                 </a>
-                <a href="https://www.instagram.com/madisongrill.me/" target="blank">
+                <a href="https://www.instagram.com/madisongrill.me/" target="_blank">
                     <Fa icon={faInstagramSquare} />
                 </a>
             </div>    
         </div>    
         <div class="menu">
-            <a href="/terms">Terms & Conditions</a>
-            <a href="/privacy-policy">Privacy Policy</a>
+            <a on:click|stopPropagation href="/terms">Terms & Conditions</a>
+            <a on:click|stopPropagation href="/privacy-policy">Privacy Policy</a>
         </div>
     </div>   
 </footer>
