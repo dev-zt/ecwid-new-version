@@ -1,4 +1,8 @@
 .list-products {
+    min-height: 75vh;
+    &.top{
+        padding-top: 85px;
+    }
     .container {
         max-width: 1160px;
         margin: 0 auto;
@@ -10,11 +14,15 @@
             display: grid;
             gap: 15px;
             grid-template-columns:  minmax(auto,50%) minmax(auto,50%);
+            &.empty{
+                grid-template-columns: auto;
+            }
             .info {
                 color: #aaa;
                 font-size: 1.2rem;
                 font-weight: 600;
                 margin-top: 2rem;
+                text-align: center;
             }
         }
     }

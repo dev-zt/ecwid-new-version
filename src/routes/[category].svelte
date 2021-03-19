@@ -7,12 +7,13 @@
 </script>
 
 <script>
-	import {WelcomeBar, Carousel, CategoriesNav , ListProducts} from '../components'
+	import {WelcomeBar, Carousel, CategoriesNav , ListProducts, Loader} from '../components'
 	import EcwidUtil from '../lib/ecwid-util'
 	export let categories
 	let category
 	let category_name=''
 	let list = []
+	let loading = true
 	import { stores } from "@sapper/app";
 	const {page} = stores()
 
@@ -22,14 +23,15 @@
 		if(catObj){
 			category_name = catObj.name
 			list = await fetchProducts(catObj.id)
+			loading = false
 		}
 	}
 
 	$: if($page.params.category){
-		category = $page.params.category
-		getProducts(category)
-
 		if(typeof document !== "undefined"){
+			category = $page.params.category
+			getProducts(category)
+
 			EcwidUtil.reload()
 		}
 	}
@@ -55,7 +57,10 @@
 			Error occured while fetching products, Please try again later!
 		</div>
 	{:else}
-		<ListProducts {list} />
+		<div class="relative">
+			<Loader show={loading} text="Loading products..." />
+			<ListProducts {list} />
+		</div>
 	{/if}
 
 </div>
@@ -63,5 +68,8 @@
 <style>
 	.index{
 		background: #efefef;
+	}
+	.relative{
+		position: relative;
 	}
 </style>
