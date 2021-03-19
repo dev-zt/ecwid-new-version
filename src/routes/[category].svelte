@@ -8,7 +8,6 @@
 
 <script>
 	import {WelcomeBar, Carousel, CategoriesNav , ListProducts, Loader} from '../components'
-	import { navShadow } from '../stores';
 	import EcwidUtil from '../lib/ecwid-util'
 	export let categories
 	let category
@@ -16,6 +15,7 @@
 	let list = []
 	let loading = true
 	import { stores } from "@sapper/app";
+	import { onMount } from 'svelte';
 	const {page} = stores()
 
 	async function getProducts(cat){
@@ -36,6 +36,16 @@
 			EcwidUtil.reload()
 		}
 	}
+
+	function scrollToNav(){
+		setTimeout(() => {
+			scrollTo(0,630)
+		})
+	}
+
+	onMount(() => {
+		scrollToNav()
+	})
 
 </script>
 
@@ -58,7 +68,7 @@
 			Error occured while fetching products, Please try again later!
 		</div>
 	{:else}
-		<div class="relative" class:top={!$navShadow}>
+		<div class="relative" >
 			<Loader show={loading} text="Loading products..." />
 			<ListProducts {list} />
 		</div>
@@ -74,8 +84,5 @@
 		position: relative;
 		min-height: 75vh;
 		padding-top: 0;
-	}
-	.relative.top{
-		padding-top: 85px;
 	}
 </style>
