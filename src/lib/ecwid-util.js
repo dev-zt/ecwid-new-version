@@ -32,9 +32,7 @@ export default {
                 let icon = menuItem.querySelector('.ec-minicart__icon')
                 if(icon){
                     menuItem.removeChild(oChild)
-                    setTimeout(() => {
-                        icon.style.opacity = 1;
-                    },50)
+                    icon.style.opacity = 1;
                     clearInterval(int)
                 }
             },1)

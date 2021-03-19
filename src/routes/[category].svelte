@@ -48,7 +48,7 @@
 				return
 			}
 			scrollTo(0,630)
-		})
+		},50)
 	}
 
 	onMount(() => {
