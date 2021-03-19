@@ -1,5 +1,6 @@
 <script>
     import BuyButton from '../BuyButton/BuyButton.svelte'
+    import LazyImage from 'svelte-lazy-image';
     import {onMount} from 'svelte'
     export let product
     let desc = ""
@@ -27,7 +28,10 @@
 <div class="card" on:click={triggerPopup}>
     {#if product.thumbnailUrl}
         <div class="img-wrapper">
-            <img loading=lazy alt={product.name} src={product.thumbnailUrl} />
+            <LazyImage 
+                alt={product.name} 
+                src={product.thumbnailUrl}
+                placeholder="https://via.placeholder.com/150?text=Madison%20Grill" />
         </div>
     {/if}
     <div class="body">

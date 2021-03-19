@@ -27,13 +27,15 @@ export default {
         scE.setAttribute('id','bag-ecwid-pr')
         scE.innerHTML = 'Ecwid.init();'
 
-        const menuItem = document.getElementById("mobile-menu")
         let tout = setInterval(() => {
             if (window.hasOwnProperty("Ecwid")){  
-                menuItem.appendChild(scE)
-                clearInterval(tout)
+                const menuItem = document.getElementById("mobile-menu")
+                if(menuItem){
+                    menuItem.appendChild(scE)
+                    clearInterval(tout)
+                }
             }
-        },30)
+        },1)
 
     },
     async reload(){

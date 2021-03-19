@@ -1,7 +1,6 @@
 <script>
     import Fa from 'svelte-fa'
     import { faBars } from '@fortawesome/free-solid-svg-icons'
-    import {onMount} from 'svelte'
     import { navShadow } from '../../stores';
     import EcwidUtil from '../../lib/ecwid-util'
     export let segment
@@ -23,10 +22,12 @@
         EcwidUtil.initBag()
     }
 
-    onMount(() => {
+    let loaded = false
+    $:if(typeof window !== "undefined" && !loaded){
         setUpBag()
-    })
-
+        loaded = true
+    }
+    
 </script>
 <section class="navbar" style={$navShadow ? 'box-shadow: var(--shadow-md);':''}>
     <nav >
@@ -51,7 +52,7 @@
                     <div class="link" on:click={installPWA}>Download App</div>
                     {/if}
                     <hr>
-                    <a href="#!/~/accountSettings">Sign in</a>
+                    <a href="/{segment}#!/~/accountSettings">Sign in</a>
 
                 </div>
             </div>

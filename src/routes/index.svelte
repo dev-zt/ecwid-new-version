@@ -45,9 +45,9 @@
 
 	$: if(y !== undefined){
 		let wHeight= document.body.getBoundingClientRect().height
-		if(lastY+1 < y){
+		if(lastY < y){
 
-			if(wHeight-200 <= y+ window.innerHeight){
+			if(wHeight-700 <= y+ window.innerHeight){
 				if(~nextCatIndex){
 					getProducts(nextCatIndex)
 					lastY = y

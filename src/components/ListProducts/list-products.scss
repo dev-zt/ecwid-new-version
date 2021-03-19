@@ -8,8 +8,7 @@
         }
         .products {
             display: grid;
-            column-gap: 0.5rem;
-            row-gap: 10px;
+            gap: 15px;
             grid-template-columns:  minmax(auto,50%) minmax(auto,50%);
             .info {
                 color: #aaa;
