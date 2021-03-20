@@ -6,6 +6,7 @@
 
     export let categories 
     export let category
+    export let main = false
 
     let list = categories.items
 
@@ -56,14 +57,24 @@
     <div class="container" class:normal={!wide}>
         <div class="list">
             {#each [...new Array(nSlice)] as item,i}
-                <a on:click|stopPropagation href="/{list[i].slug}/#cat-nav" class="item" class:selected={selected==i} >
-                    {list[i].name}
-                </a>
+                {#if selected == i && !main}
+                    <div class="selected item">{list[i].name}</div>
+                {:else}
+                    <a on:click|stopPropagation href="/{list[i].slug}/#cat-nav" class="item" class:selected={selected==i} >
+                        {list[i].name}
+                    </a>
+                {/if}
             {/each}
             {#if selected>=nSlice || nSlice == 0}
-                <a on:click|stopPropagation href="/{list[selected].slug}/#cat-nav" class="item" class:selected={true} >
-                    {list[selected].name}
-                </a>
+                {#if !main}
+                    <div class="item selected" >
+                        {list[selected].name}
+                    </div>
+                {:else}
+                    <a on:click|stopPropagation href="/{list[selected].slug}/#cat-nav" class="item selected" >
+                        {list[selected].name}
+                    </a>
+                {/if}
             {/if}
         </div>
         <div class="right" on:mouseup|stopPropagation={toggleMenu}>

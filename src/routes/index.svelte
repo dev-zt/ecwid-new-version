@@ -55,9 +55,6 @@
 			if(wHeight-1000 <= y+ window.innerHeight){
 				if(~nextCatIndex){
 					getProducts(nextCatIndex)
-					// setTimeout(()=>{
-					// 	getProducts(nextCatIndex+1)
-					// },100)
 					lastY = y
 				}
 			}
@@ -88,7 +85,7 @@
 	<Carousel />
 	
 	{#if categories && categories.items && categories.items.length}
-		<CategoriesNav {categories} {category} />
+		<CategoriesNav {categories} {category} main />
 	{/if}
 	
 	
