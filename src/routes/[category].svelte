@@ -36,26 +36,28 @@
 		}
 	}
 
-	
+	function setScroll(iw){
+		if(iw <= 480){
+			scrollTo(0,280)
+			return
+		}
+		if(iw <= 700){
+			scrollTo(0,480)
+			return
+		}
+		scrollTo(0,630)
+	}
 	
 	function scrollToNav(){
 		let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream; 
 		let iw = (iOS) ? screen.width : window.innerWidth,
-			ih = (iOS) ? screen.width : window.innerWidth
-			
+			ih = (iOS) ? screen.height : window.innerHeight
+
 		let tout  = setInterval(() => {
 			if(ih<630)
 				return
 			clearTimeout(tout)
-			if(iw <= 480){
-				scrollTo(0,280)
-				return
-			}
-			if(iw <= 700){
-				scrollTo(0,480)
-				return
-			}
-			scrollTo(0,630)
+			setScroll(iw)
 		},1)
 	}
 
