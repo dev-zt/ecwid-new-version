@@ -8,7 +8,6 @@
 
 <script>
 	import {WelcomeBar, Carousel, CategoriesNav , ListProducts, Loader} from '../components'
-	import EcwidUtil from '../lib/ecwid-util'
 	export let categories
 	let category
 	let category_name=''
@@ -28,12 +27,12 @@
 		}
 	}
 
-	$: if($page.params.category){
+	let init = true
+	$: if($page.params.category && init){
 		if(typeof document !== "undefined"){
 			category = $page.params.category
 			getProducts(category)
-
-			EcwidUtil.reload()
+			init = false
 		}
 	}
 
@@ -67,7 +66,7 @@
 	<Carousel />
 
 	{#if categories && categories.items && categories.items.length}
-		<CategoriesNav {categories} category={category_name} />
+		<CategoriesNav {categories} category={category_name} on:positionScroll={scrollToNav} />
 	{/if}
 
 
@@ -90,7 +89,7 @@
 	}
 	.relative{
 		position: relative;
-		min-height: 75vh;
+		min-height: 65vh;
 		padding-top: 0;
 	}
 </style>

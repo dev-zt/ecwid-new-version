@@ -17,8 +17,8 @@
             </div>    
         </div>    
         <div class="menu">
-            <a on:click|stopPropagation href="/terms">Terms & Conditions</a>
-            <a on:click|stopPropagation href="/privacy-policy">Privacy Policy</a>
+            <a on:click|stopPropagation href="/terms/#!/~/">Terms & Conditions</a>
+            <a on:click|stopPropagation href="/privacy-policy/#!/~/">Privacy Policy</a>
         </div>
     </div>   
 </footer>

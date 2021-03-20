@@ -52,6 +52,8 @@
                 }
             }
             .options{
+                max-height: 300px;
+                overflow-y: auto;
                 position: absolute;
                 background: #fff;
                 box-shadow: var(--shadow-md);
@@ -63,6 +65,7 @@
                     display: block;
                 }
                 .item{
+                    border-left: 2px solid transparent;
                     cursor: pointer;
                     display: block;
                     padding: 1rem;
@@ -70,6 +73,9 @@
                     color: #212121;
                     &:hover {
                         background: #eee;
+                    }
+                    &.selected{
+                        border-left: 2px solid #212121;
                     }
                 }
             }

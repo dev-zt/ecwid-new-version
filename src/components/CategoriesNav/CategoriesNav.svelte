@@ -1,14 +1,17 @@
 <script>
     import Fa from 'svelte-fa'
     import { faSortDown } from '@fortawesome/free-solid-svg-icons'
-    import { onMount } from 'svelte';
+    import { onMount, createEventDispatcher } from 'svelte';
     import {navShadow} from '../../stores'
+
+    const dispatch = createEventDispatcher()
     export let categories 
     export let category
 
     let list = categories.items
 
     let selected = 0;
+    let selectedItem = {}
     let y 
     let node
     let wide = false
@@ -32,8 +35,15 @@
         for(let i=0; i<list.length;i++){
             if(list[i].name == catParam){
                 selected = i;
+                selectedItem = list[i]
                 return;
             }
+        }
+    }
+
+    function handleSameCategory(e,cat){
+        if(cat.name == selectedItem.name){
+            dispatch('positionScroll')
         }
     }
 
@@ -71,7 +81,7 @@
             {/if}
             <div class="options" class:open>
                 {#each slicedItems as cat}
-                    <a on:click|stopPropagation href="/{cat.slug}/#cat-nav" class="item">
+                    <a on:mousedown={(e)=>handleSameCategory(e,cat)} on:click|stopPropagation class:selected={selectedItem.name == cat.name} href="/{cat.slug}/#cat-nav" class="item">
                         {cat.name}
                     </a>
                 {/each}
