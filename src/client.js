@@ -20,15 +20,17 @@ async function mCallbackPopup(mutations) {
 			  node.style.position = "fixed"
         let top = "50px"
         let maxHeight = "90vh"
-        if(window.innerWidth<769){
+        let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream; 
+        let iw = (iOS) ? screen.width : window.innerWidth;
+        if(iw<769){
             top= "0"
-            maxHeight= window.innerHeight+'px'
+            maxHeight= "100vh"
             node.style.height = maxHeight
         }
 			  node.style.top = top
 			  node.style.maxHeight = maxHeight
 
-        if(window.innerWidth < 600) return
+        if(iw < 600) return
         await new Promise(r => setTimeout(r,300))
 
         let cartHasNoImg = node.querySelector('.product-details--no-images')
@@ -38,12 +40,12 @@ async function mCallbackPopup(mutations) {
           let nw = embedContent.firstElementChild.firstElementChild
           if(cartHasNoImg && cartHasNoDesc){
             embedContent.style.width = "100%"
-            if(window.innerWidth>768)
+            if(iw>768)
               nw.style.width = '300px'
           }else{
             embedContent.style.width = "80vw"
             nw.style.width = 'inherit'
-            if(window.innerWidth>768)
+            if(iw>768)
             nw.setAttribute('class','ec-size ec-size--xxs ec-size--xs ec-size--s ec-size--m ecwid-no-touch ecwid-supports-cssanimations ecwid-responsive ecwid-no-dragndrop')
           }
 
