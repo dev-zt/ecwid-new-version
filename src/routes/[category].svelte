@@ -60,16 +60,16 @@
 			if(!isSafari)
 			 clearTimeout(tout)
 			
+			if(document.documentElement.scrollTop>750)
 			setScroll(iw)
 			if(isSafari){
-				
 				//document.body.classList.add('stop-scrolling')
 				setTimeout(() => {
 					//document.body.classList.remove('stop-scrolling')
 					// setScroll(iw)
 					console.log("RECAP")
 					clearTimeout(tout)
-				},1000)
+				},2000)
 			}
 		},1)
 	}
