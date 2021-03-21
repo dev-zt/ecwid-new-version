@@ -54,20 +54,21 @@
 		let iw = (iOS) ? screen.width : window.innerWidth,
 			ih = (iOS) ? screen.height : window.innerHeight
 		let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+		let firstTime = true;
 		let tout  = setInterval(() => {
 			if(ih<630 || loading)
 				return
-			if(!isSafari)
-			 clearTimeout(tout)
+			if(!isSafari){
+				setScroll(iw)
+				clearTimeout(tout)
+			}
 			
-			if(document.documentElement.scrollTop>750)
-			setScroll(iw)
 			if(isSafari){
-				//document.body.classList.add('stop-scrolling')
+				if(document.documentElement.scrollTop>750 || firstTime){
+					setScroll(iw)
+					firstTime = false;
+				}
 				setTimeout(() => {
-					//document.body.classList.remove('stop-scrolling')
-					// setScroll(iw)
-					console.log("RECAP")
 					clearTimeout(tout)
 				},2000)
 			}
