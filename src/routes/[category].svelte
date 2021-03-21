@@ -36,14 +36,15 @@
 		}
 	}
 
-	function getOffsetTop( elem ){
+	async function getOffsetTop( elem ){
 		document.documentElement.scrollTop = 0
+		console.log(document.documentElement.scrollTop)
 		return elem.getBoundingClientRect().top + document.documentElement.scrollTop
 	}
 
-	function setScroll(iw){
+	async function setScroll(iw){
 		let elm = document.getElementById('cat-nav')
-		let otop = getOffsetTop(elm)
+		let otop = await getOffsetTop(elm)
 		
 		scrollTo(0, otop-70)
 	}
