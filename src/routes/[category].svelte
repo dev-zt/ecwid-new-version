@@ -50,7 +50,7 @@
 	}
 	
 	function scrollToNav(){
-		let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream; 
+		let iOS = /iPad|iPhone|iPod|safari/i.test(navigator.userAgent) && !window.MSStream; 
 		let iw = (iOS) ? screen.width : window.innerWidth,
 			ih = (iOS) ? screen.height : window.innerHeight
 
@@ -58,10 +58,11 @@
 			if(ih<630 || loading)
 				return
 			clearTimeout(tout)
+			if(!iOS)
 			setScroll(iw)
-			setTimeout(() => {
-				setScroll(iw)
-			},150)
+			// setTimeout(() => {
+			// 	setScroll(iw)
+			// },150)
 		},1)
 	}
 
