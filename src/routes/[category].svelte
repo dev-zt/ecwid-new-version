@@ -36,16 +36,35 @@
 		}
 	}
 
+	function getOffsetTop( elem ){
+		// let offsetTop = 0;
+		// do {
+		// if ( !isNaN( elem.offsetTop ) )
+		// {
+		// 	offsetTop += elem.offsetTop;
+		// }
+		// } while( elem = elem.offsetParent );
+		// return offsetTop;
+		document.documentElement.scrollTop = 0
+		// console.log("ELM TOP --> ", elem.getBoundingClientRect().top)
+		// console.log("S TOP --> ", document.documentElement.scrollTop)
+		return elem.getBoundingClientRect().top + document.documentElement.scrollTop
+	}
+
 	function setScroll(iw){
-		if(iw <= 480){
-			scrollTo(0,280)
-			return
-		}
-		if(iw <= 700){
-			scrollTo(0,480)
-			return
-		}
-		scrollTo(0,630)
+		let elm = document.getElementById('cat-nav')
+		let otop = getOffsetTop(elm)
+		console.log("OFFSET TOP! ", otop)
+		scrollTo(0, otop-70)
+		// if(iw <= 480){
+		// 	scrollTo(0,280)
+		// 	return
+		// }
+		// if(iw <= 700){
+		// 	scrollTo(0,480)
+		// 	return
+		// }
+		// scrollTo(0,630)
 	}
 	
 	function scrollToNav(){
