@@ -62,7 +62,7 @@
 			setScroll(iw)
 			setTimeout(() => {
 				setScroll(iw)
-			},2000)
+			},500)
 		},1)
 	}
 
