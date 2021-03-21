@@ -53,14 +53,14 @@
 		let iw = (iOS) ? screen.width : window.innerWidth,
 			ih = (iOS) ? screen.height : window.innerHeight
 
-		let tout  = setInterval(async () => {
+		let tout  = setInterval(() => {
 			if(ih<630 || loading)
 				return
 			clearTimeout(tout)
 			setScroll(iw)
 			setTimeout(() => {
 				setScroll(iw)
-			},50)
+			},150)
 		},1)
 	}
 
