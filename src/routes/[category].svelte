@@ -57,16 +57,19 @@
 		let tout  = setInterval(() => {
 			if(ih<630 || loading)
 				return
-			clearTimeout(tout)
+			if(!isSafari)
+			 clearTimeout(tout)
 			
 			setScroll(iw)
 			if(isSafari){
-				document.body.classList.add('stop-scrolling')
+				
+				//document.body.classList.add('stop-scrolling')
 				setTimeout(() => {
-					document.body.classList.remove('stop-scrolling')
+					//document.body.classList.remove('stop-scrolling')
 					// setScroll(iw)
 					console.log("RECAP")
-				},5000)
+					clearTimeout(tout)
+				},1000)
 			}
 		},1)
 	}
