@@ -58,11 +58,11 @@
 			if(ih<630 || loading)
 				return
 			clearTimeout(tout)
-			if(!iOS)
+			
 			setScroll(iw)
-			// setTimeout(() => {
-			// 	setScroll(iw)
-			// },150)
+			setTimeout(() => {
+				setScroll(iw)
+			},2000)
 		},1)
 	}
 
