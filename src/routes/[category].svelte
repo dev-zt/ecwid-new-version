@@ -65,7 +65,8 @@
 				setTimeout(() => {
 					document.body.classList.remove('stop-scrolling')
 					// setScroll(iw)
-				},1000)
+					console.log("RECAP")
+				},2000)
 			}
 		},1)
 	}
