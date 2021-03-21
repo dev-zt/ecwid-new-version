@@ -64,7 +64,7 @@
 			}
 			
 			if(isSafari){
-				if(document.documentElement.scrollTop>750 || firstTime){
+				if(document.documentElement.scrollTop>650 || firstTime){
 					setScroll(iw)
 					firstTime = false;
 				}
