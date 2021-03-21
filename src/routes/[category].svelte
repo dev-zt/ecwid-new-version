@@ -53,14 +53,14 @@
 		let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream; 
 		let iw = (iOS) ? screen.width : window.innerWidth,
 			ih = (iOS) ? screen.height : window.innerHeight
-
+		let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 		let tout  = setInterval(() => {
 			if(ih<630 || loading)
 				return
 			clearTimeout(tout)
 			
 			setScroll(iw)
-			if(iOS){
+			if(isSafari){
 				document.body.classList.add('stop-scrolling')
 				setTimeout(() => {
 					document.body.classList.remove('stop-scrolling')
