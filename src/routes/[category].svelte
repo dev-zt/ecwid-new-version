@@ -66,7 +66,7 @@
 					document.body.classList.remove('stop-scrolling')
 					// setScroll(iw)
 					console.log("RECAP")
-				},2000)
+				},5000)
 			}
 		},1)
 	}
