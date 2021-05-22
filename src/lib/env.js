@@ -1,4 +1,4 @@
 export default {
-    STORE_ID: '50970301',
-    TOKEN: 'public_AeuHQHNAxBYaeSD9QZZwFXeF4x4mSzNs'
+    STORE_ID: '55472002',
+    TOKEN: 'public_8QneYQmWKNdtbKiZWhTGQrQ2zJ99VKg2'
 }
